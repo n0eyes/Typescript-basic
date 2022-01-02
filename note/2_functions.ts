@@ -2,7 +2,7 @@
 // function sum(a: number, b: number) {
 //   return a + b;
 // }
-sum(10, 20);
+// sum(10, 20);
 
 //함수의 반환 값에 타입 정의
 function add(): number {
@@ -10,9 +10,9 @@ function add(): number {
 }
 
 //파라미터와 반환 값 모두 정의
-function sum(a: number, b: number): number {
-  return a + b;
-}
+// function sum(a: number, b: number): number {
+//   return a + b;
+// }
 //파라미터의 개수까지 체크
 // sum(1, 2, 3, 4, 5);
 
