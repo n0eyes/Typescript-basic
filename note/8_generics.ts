@@ -47,3 +47,38 @@ function logGeneric<T>(text: T): T {
 }
 const string = logGeneric<string>('a');
 const number = logGeneric<number>(4);
+
+//제네릭의 타입 제한
+function logTextLength<T>(text: T[]){
+  console.log(text.length);
+  text.forEach((t)=>{
+    console.log(t)
+  })
+  return text;
+}
+logTextLength<string>(['hi','abc']);
+
+//제네릭의 타입 제한 2 - 정의된 타입 이용하기
+interface LengthType{
+   name: string;
+}
+function logTextLeng<T extends LengthType>(text:T){
+  console.log(text);
+  return text;
+}
+logTextLeng({name: 'foo1'})
+// logTextLeng(10) // Error
+
+// 제네릭 타입 제한 3 - keyof
+interface ShoppingItem{
+  name: string;
+  price: number;
+  stock: number;
+}
+//key를 상속하는 조건의 T는 key뿐이다
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T):T {
+  return itemOption;
+}
+// getShoppingItemOption(10);
+// getShoppingItemOption<string>('a');
+getShoppingItemOption('name');

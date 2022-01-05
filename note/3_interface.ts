@@ -34,7 +34,7 @@ interface StringArray {
   [index: number]: string
 }
 
-let array = ['a','b','c'];
+let array: StringArray = ['a','b','c'];
 // array[0] = 10; // X
 array[0] = 'ko'; //O
 
